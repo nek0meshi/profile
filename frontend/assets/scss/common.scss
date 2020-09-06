@@ -1,0 +1,18 @@
+@import '~/node_modules/bulma';
+$side-gap: 160px;
+$sp-side-gap: 5px;
+$gap: 32px;
+
+* {
+  // font-size: 62.5%;
+  line-height: 2;
+}
+
+.side-gapped {
+  padding-left: $side-gap;
+  padding-right: $side-gap;
+  @media (max-width: $desktop) {
+    padding-left: $sp-side-gap;
+    padding-right: $sp-side-gap;
+  }
+}

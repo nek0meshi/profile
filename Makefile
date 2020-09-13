@@ -18,6 +18,10 @@ sh:
 yarn:
 	docker-compose run --rm nuxt sh -c "yarn && yarn dev"
 
+.PHONY: generate-gh-pages
+generate-gh-pages:
+	docker-compose run --rm nuxt sh -c "yarn && yarn generate:gh-pages"
+
 .PHONY: create-project
 create-project:
 	docker run \

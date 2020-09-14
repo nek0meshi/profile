@@ -56,13 +56,20 @@
         <h2 class="section-title">Favorites</h2>
         <div class="favorites-item">
           <div>
-            <h3>バンド・ギター</h3>
+            <h3 class="favorite-title">バンド・ギター</h3>
+            <p>高校・大学と部活でバンド・ギターをしていました.</p>
+            <p>今でもたまに弾きますし、音楽を聴くのが大好きです.</p>
+            <p>コピーしたのは、例えばAcidman、SHAKALABBITS、相対性理論、YUKI、スピッツ、...</p>
           </div>
           <img src="images/87384_s.jpg" />
         </div>
         <div class="favorites-item">
           <div>
-            <h3>将棋</h3>
+            <h3 class="favorite-title">将棋</h3>
+            <p>ここ最近はまっていのは将棋です.</p>
+            <p>将棋ウォーズで初段を目指しています（今は1級）.</p>
+            <p>振り飛車党です.</p>
+            <p>観るのも好きです. 推しは木村九段.</p>
           </div>
           <img src="images/495678_s.jpg" />
         </div>
@@ -117,6 +124,10 @@ export default {
   p {
     padding: 0 0.5rem;
   }
+}
+.favorite-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
 }
 .favorites-item {
   display: flex;

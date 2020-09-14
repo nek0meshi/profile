@@ -58,13 +58,13 @@
           <div>
             <h3>バンド・ギター</h3>
           </div>
-          <img src="/images/87384_s.jpg" />
+          <img src="images/87384_s.jpg" />
         </div>
         <div class="favorites-item">
           <div>
             <h3>将棋</h3>
           </div>
-          <img src="/images/495678_s.jpg" />
+          <img src="images/495678_s.jpg" />
         </div>
       </section>
     </main>

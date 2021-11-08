@@ -31,22 +31,51 @@ export default {
         {
           title: '将棋盤',
           url: 'https://github.com/nek0meshi/shogi-board',
-          description: '',
+          description: '将棋盤を製作。駒を動かしたり、相手の駒を取ったり、成ったりすることができる。'
+            + 'TypeScriptやVue3のの学習も兼ねて製作。',
           techStacks: [
             'Vue.js3',
             'TypeScript',
           ],
-          fileName: 'shogi.png',
+          fileName: 'shogi.jpg',
         },
         {
-          title: '将棋盤',
-          url: 'https://github.com/nek0meshi/shogi-board',
-          description: '',
+          title: 'My page',
+          url: 'https://github.com/nek0meshi/profile',
+          description: '本サイト。エンジニアとしてのスキル・経歴・リンク集の紹介や、HTML/CSSの学習のため製作。',
           techStacks: [
-            'Vue.js3',
+            'HTML/CSS',
+            'nuxt.js',
+            'SCSS',
+          ],
+          fileName: 'profile.jpg',
+        },
+        {
+          title: 'TODOリスト',
+          url: 'https://github.com/nek0meshi/todo-list',
+          description: '単純なTODOリスト。Go言語の学習のため製作。',
+          techStacks: [
+            'Golang',
+            'vue.js3',
+            'Bulma',
+          ],
+          fileName: 'todo-list.jpg',
+        },
+        {
+          title: 'タイピングゲーム',
+          url: 'https://github.com/nek0meshi/typing',
+          description: '単純なタイピングゲーム。TypeScript・Vue.js3の学習のため製作。',
+          techStacks: [
+            'vue.js3',
             'TypeScript',
           ],
-          fileName: 'shogi.png',
+          fileName: 'typing.jpg',
+        },
+        {
+          title: 'スマレジエンジニアyushiのブログ',
+          url: 'https://yushi-dev.hatenablog.com/',
+          description: '現職の入社後に始めたブログ。学習の記録としての記事が多く、イベント観覧や読んだ書籍に関する記事もある。2020/06〜現在。',
+          fileName: 'hatenablog-logotype.svg',
         },
       ]
     },

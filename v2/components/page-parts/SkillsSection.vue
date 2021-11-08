@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2 id="skills" class="section-title">SKILLS</h2>
-    <ul class="flex flex-wrap justify-between">
+    <ul class="flex flex-wrap justify-around">
       <SkillCard
         v-for="skill in skills"
         :key="skill.title"

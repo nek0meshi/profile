@@ -10,7 +10,7 @@
         :description="link.description"
         :tech-stacks="link.techStacks"
         :file-name="link.fileName"
-        class="link-card mb-5"
+        class="link-card"
       />
       <li
         v-for="index in emptyCountItems"
@@ -94,6 +94,10 @@ export default {
 <style lang="scss" scoped>
 section {
   background-color: $bg-1;
+}
+
+.link-card {
+  margin-bottom: 50px;
 }
 
 .link-card,

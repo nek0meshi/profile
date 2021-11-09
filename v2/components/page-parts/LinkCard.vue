@@ -1,12 +1,14 @@
 <template>
-  <li class="card-wrap flex flex-row p-5">
-    <img :src="filePath" class="image mr-3">
-    <div class="flex flex-col">
-      <h3 class="h3">{{ title }}</h3>
-      <a class="url" :href="url" target="_blank">{{ url }}</a>
-      <p>{{ techStacks.join(', ') }}</p>
-      <p class="description">{{ description }}</p>
-    </div>
+  <li class="card-wrap">
+    <a :href="url" target="_blank" class="flex flex-row p-5">
+      <img :src="filePath" class="image mr-3">
+      <div class="flex flex-col">
+        <h3 class="h3">{{ title }}</h3>
+        <a class="url" :href="url" target="_blank">{{ url }}</a>
+        <p>{{ techStacks.join(', ') }}</p>
+        <p class="description">{{ description }}</p>
+      </div>
+    </a>
   </li>
 </template>
 
@@ -45,9 +47,15 @@ export default {
 <style lang="scss" scoped>
 * {
   text-align: left;
+  text-decoration: none;
 }
 .card-wrap {
   background-color: #fff;
+  transition: 0.5s;
+  &:hover {
+    box-shadow: 0 0 50px -10px $gray-2;
+    transition: 0.5s;
+  }
 }
 .image {
   height: 200px;

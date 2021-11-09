@@ -50,7 +50,7 @@ h3 {
   position: relative;
   width: 1px;
   margin: 0 30px -30px;
-  background-color: $gray-2;
+  background-color: $gray-3;
 }
 .timeline-icon {
   position: absolute;

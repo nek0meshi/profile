@@ -1,24 +1,19 @@
 <template>
   <section>
     <h2 id="skills" class="section-title">SKILLS</h2>
-    <ul class="flex flex-wrap justify-around">
+    <ul class="flex flex-wrap justify-between">
       <SkillCard
         v-for="skill in skills"
         :key="skill.title"
         :title="skill.title"
         :experience="skill.experience"
         :description="skill.description"
-        class="skill-card"
+        class="skill-card skill-card-fade-in"
       />
-      <li
-        v-for="index in skillEmptyItmes"
-        :key="index"
-        class="skill-empty"
-      ></li>
     </ul>
-    <div class="skill-others-card">
-      <h3>その他</h3>
-      <p>短期間の実務経験や実務外での利用</p>
+    <div class="skill-others-card skill-card-fade-in">
+      <h3 class="h3 mb-2">その他</h3>
+      <p class="experience mb-1">短期間の実務経験や実務外での利用</p>
       <p>{{ skillOthers.join(', ') }}</p>
     </div>
   </section>
@@ -26,17 +21,13 @@
 
 <script>
 import SkillCard from './SkillCard'
+
 export default {
   components: {
     SkillCard,
   },
+
   computed: {
-    skillEmptyCount() {
-      return 1
-    },
-    skillEmptyItmes() {
-      return [...Array(this.skillEmptyCount).keys()]
-    },
     skills() {
       return [
         {
@@ -55,14 +46,14 @@ export default {
           description: '受託開発にて、業務システムの制作などで利用。',
         },
         {
-          title: 'Python',
-          experience: '実務3ヶ月/実務外2年',
-          description: '主に、学生時代の研究活動で利用した。numpy/pandas等を利用した統計解析や、簡単なシステム操作のUI作成など。',
-        },
-        {
           title: 'HTML/CSS',
           experience: '実務半年/実務外半年',
           description: '実務で使うケースは少なく、本ページは学習も兼ねて作成した。',
+        },
+        {
+          title: 'Python',
+          experience: '実務3ヶ月/実務外2年',
+          description: '主に、学生時代の研究活動で利用した。numpy/pandas等を利用した統計解析や、簡単なシステム操作のUI作成など。',
         },
         {
           title: '応用情報技術者',
@@ -73,25 +64,51 @@ export default {
     },
     skillOthers() {
       return [
-        'DB設計・SQL',
+        'DB設計',
+        'SQL',
         'Java',
         'C++',
-        'C#(Unity)',
+        'C#',
         'Objective-C',
         'Go',
         'TypeScript',
         'AngularJS',
         'Line Messaging API',
         'Docker',
+        'Vagrant',
       ]
     },
+  },
+
+  mounted() {
+    // 要素の位置までスクロールしたらフェードインする.
+    const element = document.querySelectorAll('.skill-card-fade-in');
+    const windowH = window.innerHeight;
+
+    window.addEventListener('scroll', () => {
+      // 係数
+      const k = 1.1;
+
+      for (const e of element) {
+        if (windowH > e.getBoundingClientRect().top * k) {
+          e.classList.add('show');
+        } else {
+          e.classList.remove('show');
+        }
+      }
+    })
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.skill-empty {
-  width: 300px;
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .skill-card {
   width: 300px;
@@ -100,13 +117,15 @@ export default {
   padding: 10px 20px;
   border: solid 1px $gray-3;
   border-radius: 10px;
-  * {
-    text-align: left;
+  .experience {
+    font-size: 14px;
+    font-weight: bold;
   }
-  h3 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 24px;
+}
+.skill-card-fade-in {
+  opacity: 0;
+  &.show {
+    animation: fadein 0.5s .1s ease-in forwards;
   }
 }
 </style>

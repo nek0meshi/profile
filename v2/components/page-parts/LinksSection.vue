@@ -12,10 +12,6 @@
         :file-name="link.fileName"
         class="link-card"
       />
-      <li
-        v-for="index in emptyCountItems"
-        :key="index" class="link-card-empty"
-      ></li>
     </ul>
   </section>
 </template>
@@ -28,12 +24,6 @@ export default {
     LinkCard,
   },
   computed: {
-    emptyCount() {
-      return 1 - this.links.length % 2
-    },
-    emptyCountItems() {
-      return [...Array(this.emptyCount).keys()]
-    },
     links() {
       return [
         {
@@ -53,7 +43,7 @@ export default {
           description: '本サイト。エンジニアとしてのスキル・経歴・リンク集の紹介や、HTML/CSSの学習のため製作。',
           techStacks: [
             'HTML/CSS',
-            'nuxt.js',
+            'Nuxt.js',
             'SCSS',
           ],
           fileName: 'profile.jpg',
@@ -64,7 +54,7 @@ export default {
           description: '単純なTODOリスト。Go言語の学習のため製作。',
           techStacks: [
             'Golang',
-            'vue.js3',
+            'Vue.js3',
             'Bulma',
           ],
           fileName: 'todo-list.jpg',
@@ -74,7 +64,7 @@ export default {
           url: 'https://github.com/nek0meshi/typing',
           description: '単純なタイピングゲーム。TypeScript・Vue.js3の学習のため製作。',
           techStacks: [
-            'vue.js3',
+            'Vue.js3',
             'TypeScript',
           ],
           fileName: 'typing.jpg',
@@ -95,13 +85,8 @@ export default {
 section {
   background-color: $bg-1;
 }
-
 .link-card {
+  width: 550px;
   margin-bottom: 50px;
-}
-
-.link-card,
-.link-card-empty {
-  width: 600px;
 }
 </style>

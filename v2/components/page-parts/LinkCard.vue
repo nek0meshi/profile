@@ -1,13 +1,15 @@
 <template>
   <li class="card-wrap">
-    <a :href="url" target="_blank" class="flex flex-row p-5">
-      <img :src="filePath" class="image mr-3">
-      <div class="flex flex-col">
-        <h3 class="h3">{{ title }}</h3>
-        <a class="url" :href="url" target="_blank">{{ url }}</a>
-        <p>{{ techStacks.join(', ') }}</p>
-        <p class="description">{{ description }}</p>
+    <a :href="url" target="_blank" class="p-5 flex flex-col items-center">
+      <h3 class="h3 mb-3">{{ title }}</h3>
+      <div class="flex flex-row mb-3">
+        <img :src="filePath" class="image mr-3">
+        <div class="flex flex-col">
+          <p v-if="techStacks.length">{{ techStacks.join(', ') + '。' }}</p>
+          <p class="description">{{ description }}</p>
+        </div>
       </div>
+      <small class="url">{{ url }}</small>
     </a>
   </li>
 </template>
@@ -58,12 +60,15 @@ export default {
   }
 }
 .image {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   object-fit: contain;
   border: solid 1px $gray-3;
 }
 .url {
-  font-size: 14px;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  color: $gray-2;
 }
 </style>

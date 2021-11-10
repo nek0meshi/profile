@@ -35,19 +35,19 @@ export default {
             'Laravel',
             'Vue.js',
             'CakePHP2',
-            'Docker',
+            'jQuery',
+            'SCSS',
           ],
         },
         {
           title: '株式会社SICデジタル',
           period: '2018/01〜2020/03',
           description: 'Webアプリ開発やiOSアプリ開発を担当。'
-            + '1~10人月程度の小規模な製作・改修に携わった。',
+            + '1~10人月程度の小規模な新規開発・改修に携わった。',
           techStacks: [
             'Laravel',
             'Vue.js',
             'iOS/swift',
-            'Python',
             'Objective-C',
           ],
         },
@@ -58,11 +58,11 @@ export default {
             + '自社制作の対話システムを活用したアプリケーション制作に携わった。'
             + 'スマホアプリのクライアント部、サーバ部、インフラ周りなどを担当した。',
           techStacks: [
-            'swift',
-            'AWS',
+            'iOS/swift',
             'PHP',
-            'Line Messaging API',
             'C#',
+            'AWS',
+            'Line Messaging API',
           ],
         },
         {

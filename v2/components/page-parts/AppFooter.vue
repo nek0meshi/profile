@@ -70,5 +70,10 @@ footer {
   height: 50px;
   width: 50px;
   border-radius: 100%;
+  transition: 0.5s;
+  &:hover {
+    transition: 0.5s;
+    transform: translateY(-5px);
+  }
 }
 </style>

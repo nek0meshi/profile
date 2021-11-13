@@ -1,15 +1,42 @@
 <template>
-  <header class="app-container mx-auto py-4 text-white">
-    <ul class="flex flex-row gap-4 justify-end">
+  <header class="mx-auto text-white relative">
+    <ul class="flex flex-row gap-4 justify-end items-center header-content header-links">
       <li v-for="link in links" :key="link.label">
-        <a :href="link.href" class="text-white">{{ link.label }}</a>
+        <a :href="link.href" class="header-link-a text-white">{{ link.label }}</a>
       </li>
     </ul>
+    <nav
+      class="flex flex-row justify-end items-center header-content hamburger-wrap"
+      :class="hamburgerWrapClass"
+    >
+      <div class="hamburger" @click="clickHamburger">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </div>
+    </nav>
+    <NavModal
+      :show="showNavModal"
+      :links="links"
+      @close="showNavModal = false"
+    />
   </header>
 </template>
 
 <script>
+import NavModal from './NavModal.vue'
+
 export default {
+  components: {
+    NavModal,
+  },
+
+  data() {
+    return {
+      showNavModal: false,
+    }
+  },
+
   computed: {
     links() {
       return [
@@ -30,13 +57,105 @@ export default {
           label: 'LINKS',
         },
       ]
+    },
+    hamburgerWrapClass() {
+      return {
+        'show-modal': this.showNavModal,
+      }
     }
-  }
+  },
+
+  methods: {
+    clickHamburger() {
+      this.showNavModal = !this.showNavModal
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-header {
-  margin-bottom: -56px;
+.header-content {
+  position: absolute;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 56px;
+}
+.header-links {
+  @media (max-width: $mobile-max-width) {
+    display: none;
+  }
+}
+.header-link-a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    border-bottom: solid 2px $white;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    &::after {
+      transition: 0.5s;
+      width: 100%;
+    }
+  }
+}
+.hamburger-bar {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #eee;
+  transition: 0.5s;
+
+  &:nth-child(1) {
+    top: calc(50% - 10px);
+  }
+  &:nth-child(2) {
+    top: 50%;
+  }
+  &:nth-child(3) {
+    top: calc(50% + 10px);
+  }
+}
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  height: 24px;
+  width: 24px;
+  z-index: 10000;
+}
+.hamburger-wrap {
+  display: none;
+  @media (max-width: $mobile-max-width) {
+    display: flex;
+  }
+
+  &.show-modal {
+    .hamburger-bar {
+      background-color: #000;
+      transform: rotateZ(45deg);
+      transition: 0.5s;
+      &:nth-child(1) {
+        top: 50%;
+      }
+      &:nth-child(2) {
+        top: 50%;
+      }
+      &:nth-child(3) {
+        top: 50%;
+        transform: rotateZ(-45deg);
+      }
+    }
+  }
 }
 </style>

@@ -82,6 +82,8 @@ export default {
   margin-right: 12px;
 
   @media (max-width: $mobile-max-width) {
+    margin-right: 0;
+    margin-bottom: 12px;
     height: auto;
     min-width: 80%;
   }

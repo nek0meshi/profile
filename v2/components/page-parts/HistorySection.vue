@@ -1,17 +1,19 @@
 <template>
   <section>
-    <h2 id="history" class="section-title">HISTORY</h2>
-    <ul class="flex flex-col mx-auto history-card-list">
-      <history-card
-        v-for="history in histories"
-        :key="history.title"
-        :title="history.title"
-        :period="history.period"
-        :description="history.description"
-        :tech-stacks="history.techStacks"
-        class="history-card"
-      />
-    </ul>
+    <div class="app-container">
+      <h2 id="history" class="section-title">HISTORY</h2>
+      <ul class="flex flex-col mx-auto history-card-list">
+        <history-card
+          v-for="history in histories"
+          :key="history.title"
+          :title="history.title"
+          :period="history.period"
+          :description="history.description"
+          :tech-stacks="history.techStacks"
+          class="history-card"
+        />
+      </ul>
+    </div>
   </section>
 </template>
 
@@ -86,8 +88,5 @@ export default {
 <style lang="scss" scoped>
 section {
   background-color: $bg-1;
-}
-.history-card-list {
-  max-width: 700px;
 }
 </style>

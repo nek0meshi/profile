@@ -1,5 +1,5 @@
 <template>
-  <header class="md:container mx-auto py-4 text-white">
+  <header class="app-container mx-auto py-4 text-white">
     <ul class="flex flex-row gap-4 justify-end">
       <li v-for="link in links" :key="link.label">
         <a :href="link.href" class="text-white">{{ link.label }}</a>

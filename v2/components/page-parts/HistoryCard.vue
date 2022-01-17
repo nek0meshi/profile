@@ -79,7 +79,7 @@ h3 {
 .timeline-date {
   position: relative;
   width: 1px;
-  margin: 0 30px -30px;
+  margin: 0 30px -30px 5px;
   background-color: $gray-3;
 }
 .timeline-icon {

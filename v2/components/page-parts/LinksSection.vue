@@ -1,18 +1,20 @@
 <template>
   <section>
-    <h2 id="links" class="section-title">LINKS</h2>
-    <ul class="flex flex-row flex-wrap justify-around">
-      <LinkCard
-        v-for="link in links"
-        :key="link.title"
-        :title="link.title"
-        :url="link.url"
-        :description="link.description"
-        :tech-stacks="link.techStacks"
-        :file-name="link.fileName"
-        class="link-card"
-      />
-    </ul>
+    <div class="app-container">
+      <h2 id="links" class="section-title">LINKS</h2>
+      <ul class="flex flex-row flex-wrap justify-between">
+        <LinkCard
+          v-for="link in links"
+          :key="link.title"
+          :title="link.title"
+          :url="link.url"
+          :description="link.description"
+          :tech-stacks="link.techStacks"
+          :file-name="link.fileName"
+          class="link-card"
+        />
+      </ul>
+    </div>
   </section>
 </template>
 
@@ -70,9 +72,9 @@ export default {
           fileName: 'typing.jpg',
         },
         {
-          title: 'スマレジエンジニアyushiのブログ',
+          title: 'ブログ',
           url: 'https://yushi-dev.hatenablog.com/',
-          description: '現職の入社後に始めたブログ。学習の記録としての記事が多く、イベント観覧や読んだ書籍に関する記事もある。2020/06〜現在。',
+          description: '現職の入社後に始めたブログ。学習の記録としての記事が多く、イベント観覧や読んだ書籍に関する記事もある。はてなブログ。2020/06〜現在。',
           fileName: 'hatenablog-logotype.svg',
         },
       ]
@@ -86,7 +88,11 @@ section {
   background-color: $bg-1;
 }
 .link-card {
-  width: 550px;
+  width: calc(50% - 15px);
   margin-bottom: 50px;
+
+  @media (max-width: $tablet-max-width) {
+    width: 100%;
+  }
 }
 </style>

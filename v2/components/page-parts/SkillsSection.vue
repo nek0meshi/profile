@@ -1,20 +1,22 @@
 <template>
   <section>
-    <h2 id="skills" class="section-title">SKILLS</h2>
-    <ul class="flex flex-wrap justify-between">
-      <SkillCard
-        v-for="skill in skills"
-        :key="skill.title"
-        :title="skill.title"
-        :experience="skill.experience"
-        :description="skill.description"
-        class="skill-card skill-card-fade-in"
-      />
-    </ul>
-    <div class="skill-others-card skill-card-fade-in">
-      <h3 class="h3 mb-2">その他</h3>
-      <p class="experience mb-1">短期間の実務経験や実務外での利用</p>
-      <p>{{ skillOthers.join(', ') }}</p>
+    <div class="app-container">
+      <h2 id="skills" class="section-title">SKILLS</h2>
+      <ul class="flex flex-wrap justify-between">
+        <SkillCard
+          v-for="skill in skills"
+          :key="skill.title"
+          :title="skill.title"
+          :experience="skill.experience"
+          :description="skill.description"
+          class="skill-card skill-card-fade-in"
+        />
+      </ul>
+      <div class="skill-others-card skill-card-fade-in">
+        <h3 class="h3 mb-2">その他</h3>
+        <p class="experience mb-1">短期間の実務経験や実務外での利用</p>
+        <p>{{ skillOthers.join(', ') }}</p>
+      </div>
     </div>
   </section>
 </template>
@@ -111,7 +113,14 @@ export default {
   }
 }
 .skill-card {
-  width: 300px;
+  width: calc(33% - 10px);
+
+  @media (max-width: $tablet-max-width) {
+    width: calc(50% - 15px);
+  }
+  @media (max-width: $mobile-max-width) {
+    width: 100%;
+  }
 }
 .skill-others-card {
   padding: 10px 20px;

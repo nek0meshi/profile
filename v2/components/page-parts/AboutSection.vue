@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="app-container">
     <h2 id="about" class="section-title">ABOUT</h2>
     <div>
       <p>2017年より、関西でWebエンジニアをしています。</p>

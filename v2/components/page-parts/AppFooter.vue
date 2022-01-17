@@ -46,6 +46,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+* {
+  color: #fff;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -55,7 +59,6 @@ footer {
   height: 180px;
   width: 100%;
   background-color: $main-1;
-  color: #fff;
 }
 
 .logos {

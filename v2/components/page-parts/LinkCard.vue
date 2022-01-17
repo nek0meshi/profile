@@ -48,12 +48,12 @@ export default {
 }
 .card-wrap {
   background-color: #fff;
-  width: 600px;
 }
 .image {
   height: 200px;
   width: 200px;
   object-fit: contain;
+  border: solid 1px $gray-3;
 }
 .url {
   font-size: 14px;

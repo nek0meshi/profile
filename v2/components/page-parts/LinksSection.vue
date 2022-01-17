@@ -1,9 +1,7 @@
 <template>
   <section>
     <h2 id="links" class="section-title">LINKS</h2>
-    <ul
-      class="flex flex-row flex-wrap justify-between"
-    >
+    <ul class="flex flex-row flex-wrap justify-around">
       <LinkCard
         v-for="link in links"
         :key="link.title"
@@ -14,6 +12,10 @@
         :file-name="link.fileName"
         class="link-card mb-5"
       />
+      <li
+        v-for="index in emptyCountItems"
+        :key="index" class="link-card-empty"
+      ></li>
     </ul>
   </section>
 </template>
@@ -26,6 +28,12 @@ export default {
     LinkCard,
   },
   computed: {
+    emptyCount() {
+      return 1 - this.links.length % 2
+    },
+    emptyCountItems() {
+      return [...Array(this.emptyCount).keys()]
+    },
     links() {
       return [
         {
@@ -88,4 +96,8 @@ section {
   background-color: $bg-1;
 }
 
+.link-card,
+.link-card-empty {
+  width: 600px;
+}
 </style>

@@ -48,7 +48,7 @@ export default {
 }
 .card-wrap {
   background-color: #fff;
-  width: 500px;
+  width: 600px;
 }
 .image {
   height: 200px;

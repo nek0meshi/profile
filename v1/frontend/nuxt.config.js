@@ -60,7 +60,10 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
+  generate: {
+    dir: '../../docs/v1'
+  },
   router: {
-    base: '/portfolio/',
+    base: '/profile/v1',
   }
 }

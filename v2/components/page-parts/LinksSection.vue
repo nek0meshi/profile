@@ -40,7 +40,7 @@ export default {
           fileName: 'shogi.jpg',
         },
         {
-          title: 'My page',
+          title: 'Profile',
           url: 'https://github.com/nek0meshi/profile',
           description: '本サイト。エンジニアとしてのスキル・経歴・リンク集の紹介や、HTML/CSSの学習のため製作。',
           techStacks: [
@@ -76,6 +76,18 @@ export default {
           url: 'https://yushi-dev.hatenablog.com/',
           description: '現職の入社後に始めたブログ。学習の記録としての記事が多く、イベント観覧や読んだ書籍に関する記事もある。はてなブログ。2020/06〜現在。',
           fileName: 'hatenablog-logotype.svg',
+        },
+        {
+          title: 'Profile v1',
+          url: 'https://github.com/nek0meshi/profile/tree/master/v1',
+          description: 'プロフィールページの過去バージョン。エンジニアとしてのスキル・経歴・リンク集の紹介や、HTML/CSSの学習のため製作。',
+          techStacks: [
+            'HTML/CSS',
+            'Nuxt.js',
+            'SCSS',
+            'bulma',
+          ],
+          fileName: 'profile-v1.jpg',
         },
       ]
     },

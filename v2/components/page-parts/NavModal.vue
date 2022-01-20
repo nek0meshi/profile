@@ -6,7 +6,7 @@
   >
     <ul class="ul flex flex-col justify-between">
       <li v-for="link in links" :key="link.label">
-        <a :href="link.href">{{ link.label }}</a>
+        <a @click="$emit('jump', link.href)">{{ link.label }}</a>
       </li>
     </ul>
   </div>
@@ -55,6 +55,7 @@ export default {
     font-size: 30px;
   }
   a {
+    cursor: pointer;
     text-decoration: none;
   }
 }

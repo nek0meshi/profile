@@ -1,21 +1,30 @@
+const title = 'Yushi W - Profile'
+const description = 'Yushi W - Profile'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'v2',
+    title,
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja',
+      prefix: 'og: http://ogp.me/ns#',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: description },
+      { name: 'format-detection', content: 'telephone=no' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://nek0meshi.github.io/profile' },
+      { hid: 'og:site_name', property: 'og:site_name', content: title },
+      { hid: 'og:description', property: 'og:description', content: description },
+      { hid: 'og:image', property: 'og:image', content: 'https://nek0meshi.github.io/profile/links/profile.jpg' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/svg+xml', href: 'icon.svg' }
     ]
   },
 
@@ -54,4 +63,10 @@ export default {
       '~/assets/scss/variables.scss',
     ],
   },
+  generate: {
+    dir: '../docs'
+  },
+  router: {
+    base: '/profile/',
+  }
 }

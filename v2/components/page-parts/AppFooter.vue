@@ -14,7 +14,7 @@
         </a>
       </li>
     </ul>
-    <p>©︎ 2021 YUSHI WATANABE</p>
+    <p>©︎ 2021-2022 YUSHI WATANABE</p>
   </footer>
 </template>
 

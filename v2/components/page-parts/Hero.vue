@@ -1,8 +1,8 @@
 <template>
-  <div class="hero-image bg-no-repeat bg-cover flex justify-center items-center">
-    <h1 class="h2 text-white">
-      YUSHI WATANABE
-    </h1>
+  <div
+    class="hero-image bg-no-repeat bg-cover flex justify-center items-center"
+  >
+    <h1 class="h2 text-white">YUSHI WATANABE</h1>
   </div>
 </template>
 

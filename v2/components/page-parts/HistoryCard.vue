@@ -37,18 +37,18 @@ export default {
   mounted() {
     // 要素の位置までスクロールしたらフェードインする.
     // ref. https://cony-tas.com/javascript-scroll-event01
-    const element = document.querySelectorAll('.history-card-fade-in');
-    const windowH = window.innerHeight;
+    const element = document.querySelectorAll('.history-card-fade-in')
+    const windowH = window.innerHeight
 
     window.addEventListener('scroll', () => {
       // 係数
-      const k = 1.1;
+      const k = 1.1
 
       for (const e of element) {
         if (windowH > e.getBoundingClientRect().top * k) {
-          e.classList.add('show');
+          e.classList.add('show')
         } else {
-          e.classList.remove('show');
+          e.classList.remove('show')
         }
       }
     })
@@ -62,12 +62,12 @@ export default {
 }
 @keyframes fadein-top {
   0% {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 h3 {
@@ -115,7 +115,7 @@ h3 {
   .history-card-fade-in {
     opacity: 0;
     &.show {
-      animation: fadein-top 1s .1s ease-in forwards;
+      animation: fadein-top 1s 0.1s ease-in forwards;
     }
   }
 }

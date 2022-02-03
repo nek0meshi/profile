@@ -1,16 +1,13 @@
 <template>
   <footer>
     <ul class="logos flex flex-row">
-      <li
-        v-for="link in links"
-        :key="link.title"
-      >
+      <li v-for="link in links" :key="link.title">
         <a :href="link.url" target="_blank">
           <img
             :src="'logo/' + link.imageFileName"
             class="link-logo"
             :style="{ 'background-color': link.bdColor || '#fff' }"
-          >
+          />
         </a>
       </li>
     </ul>
@@ -40,8 +37,8 @@ export default {
           imageFileName: 'hatenablog-logo.svg',
         },
       ]
-    }
-  }
+    },
+  },
 }
 </script>
 

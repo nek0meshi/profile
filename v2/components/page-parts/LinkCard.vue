@@ -3,7 +3,7 @@
     <a :href="url" target="_blank" class="p-5 flex flex-col items-center">
       <h3 class="h3">{{ title }}</h3>
       <div class="card-content mb-3 self-stretch">
-        <img :src="filePath" class="image">
+        <img :src="filePath" class="image" />
         <div class="flex flex-col">
           <p v-if="techStacks.length">{{ techStacks.join(', ') + '。' }}</p>
           <p class="description">{{ description }}</p>
@@ -41,8 +41,8 @@ export default {
   computed: {
     filePath() {
       return 'links/' + this.fileName
-    }
-  }
+    },
+  },
 }
 </script>
 

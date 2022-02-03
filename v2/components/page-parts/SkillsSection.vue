@@ -35,12 +35,14 @@ export default {
         {
           title: 'PHP',
           experience: '実務4年',
-          description: 'サーバサイドではPHPを使う機会が多い。Laravelを中心に、CakePHP2も経験がある。',
+          description:
+            'サーバサイドではPHPを使う機会が多い。Laravelを中心に、CakePHP2も経験がある。',
         },
         {
           title: 'JavaScript',
           experience: '実務3年',
-          description: 'Vue.jsを使うケースが多い。短期間で、nuxt.jsやAngularJSも実務で利用。',
+          description:
+            'Vue.jsを使うケースが多い。短期間で、nuxt.jsやAngularJSも実務で利用。',
         },
         {
           title: 'iOS/swift',
@@ -50,17 +52,20 @@ export default {
         {
           title: 'HTML/CSS',
           experience: '実務半年/実務外半年',
-          description: '実務で使うケースは少なく、本ページは学習も兼ねて作成した。',
+          description:
+            '実務で使うケースは少なく、本ページは学習も兼ねて作成した。',
         },
         {
           title: 'Python',
           experience: '実務3ヶ月/実務外2年',
-          description: '主に、学生時代の研究活動で利用した。numpy/pandas等を利用した統計解析や、簡単なシステム操作のUI作成など。',
+          description:
+            '主に、学生時代の研究活動で利用した。numpy/pandas等を利用した統計解析や、簡単なシステム操作のUI作成など。',
         },
         {
           title: '応用情報技術者',
           experience: '-',
-          description: '情報処理の基礎知識習得のため、受験。2018/04に基本情報技術者試験、2018/10に応用情報技術者取得に合格'
+          description:
+            '情報処理の基礎知識習得のため、受験。2018/04に基本情報技術者試験、2018/10に応用情報技術者取得に合格',
         },
       ]
     },
@@ -84,18 +89,18 @@ export default {
 
   mounted() {
     // 要素の位置までスクロールしたらフェードインする.
-    const element = document.querySelectorAll('.skill-card-fade-in');
-    const windowH = window.innerHeight;
+    const element = document.querySelectorAll('.skill-card-fade-in')
+    const windowH = window.innerHeight
 
     window.addEventListener('scroll', () => {
       // 係数
-      const k = 1.1;
+      const k = 1.1
 
       for (const e of element) {
         if (windowH > e.getBoundingClientRect().top * k) {
-          e.classList.add('show');
+          e.classList.add('show')
         } else {
-          e.classList.remove('show');
+          e.classList.remove('show')
         }
       }
     })
@@ -134,7 +139,7 @@ export default {
 .skill-card-fade-in {
   opacity: 0;
   &.show {
-    animation: fadein 0.5s .1s ease-in forwards;
+    animation: fadein 0.5s 0.1s ease-in forwards;
   }
 }
 </style>

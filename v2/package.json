@@ -8,8 +8,9 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
-    "lint": "yarn lint:js && yarn lint:style"
+    "lint:style": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
+    "prettier": "prettier --write .",
+    "lint": "yarn lint:js && yarn lint:style && prettier"
   },
   "dependencies": {
     "core-js": "^3.15.1",

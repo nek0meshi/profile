@@ -1,0 +1,22 @@
+name: Node.js CI
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'v2'
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version-file: 'v2/.node-version'
+        cache: 'yarn'
+        cache-dependency-path: '**/yarn.lock'
+    - run: yarn
+    - run: yarn lint

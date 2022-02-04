@@ -28,7 +28,7 @@ export default {
   computed: {
     navClass() {
       return {
-        'show': this.show,
+        show: this.show,
       }
     },
   },

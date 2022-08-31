@@ -46,6 +46,13 @@ export default {
           fileName: 'profile.jpg',
         },
         {
+          title: 'Tetris',
+          url: 'https://github.com/nek0meshi/tetris',
+          description: 'テトリスゲーム。TypeScript・Reactの学習のため製作。',
+          techStacks: ['TypeScript', 'React'],
+          fileName: 'tetris.jpg',
+        },
+        {
           title: 'TODOリスト',
           url: 'https://github.com/nek0meshi/todo-list',
           description: '単純なTODOリスト。Go言語の学習のため製作。',

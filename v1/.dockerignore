@@ -1,6 +1,0 @@
-.git
-.dockerignore
-Makefile
-README.md
-*/node_modules
-*/.gitignore

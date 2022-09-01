@@ -1,19 +1,3 @@
-.PHONY: up
-up:
-	docker-compose up
-
-.PHONY: down
-down:
-	docker-compose down
-
-.PHONY: down-v
-down-v:
-	docker-compose down -v
-
-.PHONY: sh
-sh:
-	docker-compose run --rm nuxt sh
-
 .PHONY: yarn
 yarn:
 	cd frontend && yarn && yarn dev

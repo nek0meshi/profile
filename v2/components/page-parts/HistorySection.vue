@@ -34,7 +34,14 @@ export default {
             'Webエンジニアとして、勤怠管理の自社サービスの開発に携わっている。' +
             'リードエンジニアとして、重要度の高い実装や上流寄りの工程、教育やレビューを担当。' +
             '1on1の開始、振り返り会の企画・進行などといったチーム運営にも取り組んでいる。',
-          techStacks: ['Laravel', 'Vue.js', 'CakePHP2', 'jQuery', 'SCSS'],
+          techStacks: [
+            'Laravel',
+            'Vue.js',
+            'CakePHP2',
+            'jQuery',
+            'TypeScript',
+            'SCSS',
+          ],
         },
         {
           title: '株式会社SICデジタル',

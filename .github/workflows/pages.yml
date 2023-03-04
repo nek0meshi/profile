@@ -1,0 +1,37 @@
+name: Pages
+
+on:
+  push:
+    branch:
+      - gh-pages-release
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: 'v2/.tool-versions'
+          cache: 'yarn'
+          cache-dependency-path: 'v2/yarn.lock'
+      - run: yarn
+        working-directory: v2
+      - run: yarn generate:gh-pages
+        working-directory: v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: 'v1/.tool-versions'
+          cache: 'yarn'
+          cache-dependency-path: 'v1/frontend/yarn.lock'
+      - run: make generate-gh-pages
+        working-directory: v1
+      - run: |
+          git add -A
+          if ! git diff --cached --quiet
+          then
+            git config --global user.email "nekmeshi@gmail.com"
+            git config --global user.name "nek0meshi"
+            git rev-parse HEAD | xargs git commit -m $1
+            git push origin HEAD:gh-pages -f
+          fi

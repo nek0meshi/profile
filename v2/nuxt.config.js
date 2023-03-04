@@ -70,6 +70,6 @@ export default {
     dir: '../docs',
   },
   router: {
-    base: '/profile/',
+    base: '/' + (process.env.BASE_PATH || ''),
   },
 }

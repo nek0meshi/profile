@@ -7,6 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "generate:gh-pages": "BASE_PATH=profile nuxt generate",
     "eslint": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "eslint:fix": "eslint --ext \".js,.vue\" --ignore-path .gitignore --fix .",
     "stylelint": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore",

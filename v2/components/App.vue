@@ -6,6 +6,7 @@
     <HistorySection />
     <SkillsSection />
     <LinksSection />
+    <PhotosSection />
     <AppFooter />
   </div>
 </template>
@@ -18,6 +19,7 @@ import Hero from './page-parts/Hero.vue'
 import HistorySection from './page-parts/HistorySection.vue'
 import SkillsSection from './page-parts/SkillsSection.vue'
 import LinksSection from './page-parts/LinksSection.vue'
+import PhotosSection from './page-parts/PhotosSection.vue'
 
 export default {
   components: {
@@ -28,6 +30,7 @@ export default {
     HistorySection,
     SkillsSection,
     LinksSection,
+    PhotosSection,
   },
 }
 </script>

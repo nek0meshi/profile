@@ -34,15 +34,15 @@ export default {
       return [
         {
           title: 'PHP',
-          experience: '実務4年',
+          experience: '実務5年',
           description:
             'サーバサイドではPHPを使う機会が多い。Laravelを中心に、CakePHP2も経験がある。',
         },
         {
           title: 'JavaScript',
-          experience: '実務3年',
+          experience: '実務4年',
           description:
-            'Vue.jsを使うケースが多い。短期間で、nuxt.jsやAngularJSも実務で利用。',
+            'Vue.js・jQueryを使うケースが多い。既存システムへのwebpackやTypeScriptの導入も担当。',
         },
         {
           title: 'iOS/swift',
@@ -79,10 +79,14 @@ export default {
         'Objective-C',
         'Go',
         'TypeScript',
+        'React',
         'AngularJS',
+        'Nuxt.js',
+        'AWS',
         'Line Messaging API',
         'Docker',
         'Vagrant',
+        '英語（TOEIC: 770点)',
       ]
     },
   },

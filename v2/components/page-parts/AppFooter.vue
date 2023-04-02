@@ -11,7 +11,7 @@
         </a>
       </li>
     </ul>
-    <p>©︎ 2021-2022 YUSHI WATANABE</p>
+    <p>©︎ 2021-2023 YUSHI WATANABE</p>
   </footer>
 </template>
 
@@ -33,7 +33,7 @@ export default {
         },
         {
           title: 'hatena-blog',
-          url: 'https://yushi-dev.hatenablog.com/',
+          url: 'https://yushi-dev.hatenablog.com',
           imageFileName: 'hatenablog-logo.svg',
         },
       ]

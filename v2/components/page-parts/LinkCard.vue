@@ -93,5 +93,6 @@ export default {
   font-size: 12px;
   text-align: center;
   color: $gray-2;
+  word-wrap: break-word;
 }
 </style>

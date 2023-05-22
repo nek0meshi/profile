@@ -62,10 +62,10 @@ export default {
             '主に、学生時代の研究活動で利用した。numpy/pandas等を利用した統計解析や、簡単なシステム操作のUI作成など。',
         },
         {
-          title: '応用情報技術者',
+          title: '資格など',
           experience: '-',
           description:
-            '情報処理の基礎知識習得のため、受験。2018/04に基本情報技術者試験、2018/10に応用情報技術者取得に合格',
+            '基本情報技術者試験, 応用情報技術者, TOEIC 770点, 給与計算実務能力検定 2級',
         },
       ]
     },
@@ -82,11 +82,12 @@ export default {
         'React',
         'AngularJS',
         'Nuxt.js',
+        'Next.js',
+        'SCSS',
         'AWS',
         'Line Messaging API',
         'Docker',
         'Vagrant',
-        '英語（TOEIC: 770点)',
       ]
     },
   },

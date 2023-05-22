@@ -34,6 +34,8 @@ export default {
   computed: {
     photos() {
       return [
+        'DSC03381.jpeg',
+        'DSC02526.jpeg',
         'DSC01741.jpeg',
         'DSC02253.jpeg',
         'DSC01744.jpeg',

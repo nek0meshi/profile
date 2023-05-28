@@ -76,6 +76,10 @@ export default {
           href: '#links',
           label: 'LINKS',
         },
+        {
+          href: '#photos',
+          label: 'PHOTOS',
+        },
       ]
     },
     headerClass() {

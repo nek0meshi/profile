@@ -23,10 +23,16 @@ import PhotosSection from './components/page-parts/PhotosSection.vue'
 </template>
 
 <style lang="scss">
-@use '~/assets/scss/main.scss';
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono&family=Zen+Kaku+Gothic+Antique&display=swap');
 
-section {
-  padding-top: 70px;
-  padding-bottom: 70px;
+* {
+  font-family: 'Red Hat Mono', 'Zen Kaku Gothic Antique', monospace, sans-serif;
+  text-align: center;
+  font-size: 16px;
+  color: $text-1;
+}
+
+.h3 {
+  font-size: 24px;
 }
 </style>

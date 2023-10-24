@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppContainer from '~/components/parts/AppContainer.vue'
 import HistoryCard from './HistoryCard'
 
 const histories = [
@@ -48,26 +49,23 @@ const histories = [
 </script>
 
 <template>
-  <section>
-    <div class="app-container">
-      <h2 id="history" class="section-title">HISTORY</h2>
-      <ul class="flex flex-col mx-auto history-card-list">
-        <history-card
-          v-for="history in histories"
-          :key="history.title"
-          :title="history.title"
-          :period="history.period"
-          :description="history.description"
-          :tech-stacks="history.techStacks"
-          class="history-card"
-        />
-      </ul>
-    </div>
-  </section>
+  <app-container id="history" title="HISTORY" is-gray>
+    <ul class="flex flex-col mx-auto history-card-list">
+      <history-card
+        v-for="history in histories"
+        :key="history.title"
+        :title="history.title"
+        :period="history.period"
+        :description="history.description"
+        :tech-stacks="history.techStacks"
+        class="history-card"
+      />
+    </ul>
+  </app-container>
 </template>
 
 <style lang="scss" scoped>
-section {
-  background-color: $bg-1;
-}
+/**
+ * style tagを削除するとscript tagがstyle tagと誤認されてsassエラーが発生する.
+ */
 </style>

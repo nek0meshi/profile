@@ -2,7 +2,7 @@
 import AppFooter from './components/page-parts/AppFooter.vue'
 import AppHeader from './components/page-parts/AppHeader.vue'
 import AboutSection from './components/page-parts/AboutSection.vue'
-import Hero from './components/page-parts/Hero.vue'
+import HeroSection from './components/page-parts/HeroSection.vue'
 import HistorySection from './components/page-parts/HistorySection.vue'
 import SkillsSection from './components/page-parts/SkillsSection.vue'
 import LinksSection from './components/page-parts/LinksSection.vue'
@@ -12,7 +12,7 @@ import PhotosSection from './components/page-parts/PhotosSection.vue'
 <template>
   <div>
     <AppHeader />
-    <Hero />
+    <HeroSection />
     <AboutSection />
     <HistorySection />
     <SkillsSection />

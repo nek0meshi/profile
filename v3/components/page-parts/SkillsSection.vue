@@ -1,3 +1,83 @@
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import SkillCard from './SkillCard'
+
+const skills = [
+  {
+    title: 'PHP',
+    experience: '実務5年',
+    description:
+      'サーバサイドではPHPを使う機会が多い。Laravelを中心に、CakePHP2も経験がある。',
+  },
+  {
+    title: 'JavaScript',
+    experience: '実務4年',
+    description:
+      'Vue.js・jQueryを使うケースが多い。既存システムへのwebpackやTypeScriptの導入も担当。',
+  },
+  {
+    title: 'iOS/swift',
+    experience: '実務1年',
+    description: '受託開発にて、業務システムの制作などで利用。',
+  },
+  {
+    title: 'HTML/CSS',
+    experience: '実務半年/実務外半年',
+    description: '実務で使うケースは少なく、本ページは学習も兼ねて作成した。',
+  },
+  {
+    title: 'Python',
+    experience: '実務3ヶ月/実務外2年',
+    description:
+      '主に、学生時代の研究活動で利用した。numpy/pandas等を利用した統計解析や、簡単なシステム操作のUI作成など。',
+  },
+  {
+    title: '資格など',
+    experience: '-',
+    description:
+      '基本情報技術者試験, 応用情報技術者, TOEIC 770点, 給与計算実務能力検定 2級',
+  },
+]
+const skillOthers = [
+  'DB設計',
+  'SQL',
+  'Java',
+  'C++',
+  'C#',
+  'Objective-C',
+  'Go',
+  'TypeScript',
+  'React',
+  'AngularJS',
+  'Nuxt.js',
+  'Next.js',
+  'SCSS',
+  'AWS',
+  'Line Messaging API',
+  'Docker',
+  'Vagrant',
+]
+
+onMounted(() => {
+  // 要素の位置までスクロールしたらフェードインする.
+  const element = document.querySelectorAll('.skill-card-fade-in')
+  const windowH = window.innerHeight
+
+  window.addEventListener('scroll', () => {
+    // 係数
+    const k = 1.1
+
+    for (const e of element) {
+      if (windowH > e.getBoundingClientRect().top * k) {
+        e.classList.add('show')
+      } else {
+        e.classList.remove('show')
+      }
+    }
+  })
+})
+</script>
+
 <template>
   <section>
     <div class="app-container">
@@ -20,98 +100,6 @@
     </div>
   </section>
 </template>
-
-<script>
-import SkillCard from './SkillCard'
-
-export default {
-  components: {
-    SkillCard,
-  },
-
-  computed: {
-    skills() {
-      return [
-        {
-          title: 'PHP',
-          experience: '実務5年',
-          description:
-            'サーバサイドではPHPを使う機会が多い。Laravelを中心に、CakePHP2も経験がある。',
-        },
-        {
-          title: 'JavaScript',
-          experience: '実務4年',
-          description:
-            'Vue.js・jQueryを使うケースが多い。既存システムへのwebpackやTypeScriptの導入も担当。',
-        },
-        {
-          title: 'iOS/swift',
-          experience: '実務1年',
-          description: '受託開発にて、業務システムの制作などで利用。',
-        },
-        {
-          title: 'HTML/CSS',
-          experience: '実務半年/実務外半年',
-          description:
-            '実務で使うケースは少なく、本ページは学習も兼ねて作成した。',
-        },
-        {
-          title: 'Python',
-          experience: '実務3ヶ月/実務外2年',
-          description:
-            '主に、学生時代の研究活動で利用した。numpy/pandas等を利用した統計解析や、簡単なシステム操作のUI作成など。',
-        },
-        {
-          title: '資格など',
-          experience: '-',
-          description:
-            '基本情報技術者試験, 応用情報技術者, TOEIC 770点, 給与計算実務能力検定 2級',
-        },
-      ]
-    },
-    skillOthers() {
-      return [
-        'DB設計',
-        'SQL',
-        'Java',
-        'C++',
-        'C#',
-        'Objective-C',
-        'Go',
-        'TypeScript',
-        'React',
-        'AngularJS',
-        'Nuxt.js',
-        'Next.js',
-        'SCSS',
-        'AWS',
-        'Line Messaging API',
-        'Docker',
-        'Vagrant',
-      ]
-    },
-  },
-
-  mounted() {
-    // 要素の位置までスクロールしたらフェードインする.
-    const element = document.querySelectorAll('.skill-card-fade-in')
-    const windowH = window.innerHeight
-
-    window.addEventListener('scroll', () => {
-      // 係数
-      const k = 1.1
-
-      for (const e of element) {
-        if (windowH > e.getBoundingClientRect().top * k) {
-          e.classList.add('show')
-        } else {
-          e.classList.remove('show')
-        }
-      }
-    })
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 @keyframes fadein {

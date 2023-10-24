@@ -1,50 +1,34 @@
+<script setup lang="ts">
+import { computed, defineProps } from 'vue'
+
+const props = defineProps<{
+  title: string
+  url: string
+  description: string
+  techStacks: string[]
+  fileName: string
+}>()
+
+const filePath = computed(() => 'links/' + props.fileName)
+</script>
+
 <template>
   <li class="card-wrap">
     <a :href="url" target="_blank" class="p-5 flex flex-col items-center">
-      <h3 class="h3">{{ title }}</h3>
+      <h3 class="h3">{{ props.title }}</h3>
       <div class="card-content mb-3 self-stretch">
         <img :src="filePath" class="image" />
         <div class="flex flex-col">
-          <p v-if="techStacks.length">{{ techStacks.join(', ') + '。' }}</p>
-          <p class="description">{{ description }}</p>
+          <p v-if="techStacks.length">
+            {{ props.techStacks.join(', ') + '。' }}
+          </p>
+          <p class="description">{{ props.description }}</p>
         </div>
       </div>
-      <small class="url">{{ url }}</small>
+      <small class="url">{{ props.url }}</small>
     </a>
   </li>
 </template>
-
-<script>
-export default {
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    url: {
-      type: String,
-      default: '',
-    },
-    description: {
-      type: String,
-      default: '',
-    },
-    techStacks: {
-      type: Array,
-      default: () => [],
-    },
-    fileName: {
-      type: String,
-      default: '',
-    },
-  },
-  computed: {
-    filePath() {
-      return 'links/' + this.fileName
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 * {

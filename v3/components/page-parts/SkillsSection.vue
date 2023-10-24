@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
+import AppContainer from '~/components/parts/AppContainer.vue'
 import SkillCard from './SkillCard'
 
 const skills = [
@@ -79,26 +80,23 @@ onMounted(() => {
 </script>
 
 <template>
-  <section>
-    <div class="app-container">
-      <h2 id="skills" class="section-title">SKILLS</h2>
-      <ul class="flex flex-wrap justify-between">
-        <SkillCard
-          v-for="skill in skills"
-          :key="skill.title"
-          :title="skill.title"
-          :experience="skill.experience"
-          :description="skill.description"
-          class="skill-card skill-card-fade-in"
-        />
-      </ul>
-      <div class="skill-others-card skill-card-fade-in">
-        <h3 class="h3 mb-2">その他</h3>
-        <p class="experience mb-1">短期間の実務経験や実務外での利用</p>
-        <p>{{ skillOthers.join(', ') }}</p>
-      </div>
+  <app-container id="skills" title="SKILLS">
+    <ul class="flex flex-wrap justify-between">
+      <SkillCard
+        v-for="skill in skills"
+        :key="skill.title"
+        :title="skill.title"
+        :experience="skill.experience"
+        :description="skill.description"
+        class="skill-card skill-card-fade-in"
+      />
+    </ul>
+    <div class="skill-others-card skill-card-fade-in">
+      <h3 class="h3 mb-2">その他</h3>
+      <p class="experience mb-1">短期間の実務経験や実務外での利用</p>
+      <p>{{ skillOthers.join(', ') }}</p>
     </div>
-  </section>
+  </app-container>
 </template>
 
 <style lang="scss" scoped>

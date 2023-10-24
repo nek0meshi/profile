@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import AppContainer from '~/components/parts/AppContainer.vue'
 import LightBox from '../parts/LightBox.vue'
 
 const photos = [
@@ -36,14 +37,12 @@ const hasPhoto = (val: number): boolean => val >= 0 && val < photos.length
 </script>
 
 <template>
-  <section id="photo">
-    <div class="app-container">
-      <ul class="flex flex-row flex-wrap justify-between">
-        <li v-for="(photo, index) in photos" :key="photo" class="photo-card">
-          <img :src="'photos/' + photo" @click="select(index)" />
-        </li>
-      </ul>
-    </div>
+  <app-container id="photos" title="PHOTOS">
+    <ul class="flex flex-row flex-wrap justify-between">
+      <li v-for="(photo, index) in photos" :key="photo" class="photo-card">
+        <img :src="'photos/' + photo" @click="select(index)" />
+      </li>
+    </ul>
     <LightBox
       :file-path="selectedPath"
       :has-left="hasPhoto(selectedIndex !== null && selectedIndex - 1)"
@@ -52,7 +51,7 @@ const hasPhoto = (val: number): boolean => val >= 0 && val < photos.length
       @go-left="go(-1)"
       @go-right="go(1)"
     />
-  </section>
+  </app-container>
 </template>
 
 <style lang="scss" scoped>

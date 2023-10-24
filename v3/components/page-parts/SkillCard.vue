@@ -1,29 +1,20 @@
+<script setup lang="ts">
+import { defineProps } from 'vue'
+
+const props = defineProps<{
+  title: string
+  experience: string
+  description: string
+}>()
+</script>
+
 <template>
   <li class="card-wrap">
-    <h3 class="h3 mb-2">{{ title }}</h3>
-    <p class="experience mb-1">{{ experience }}</p>
-    <p class="description">{{ description }}</p>
+    <h3 class="h3 mb-2">{{ props.title }}</h3>
+    <p class="experience mb-1">{{ props.experience }}</p>
+    <p class="description">{{ props.description }}</p>
   </li>
 </template>
-
-<script>
-export default {
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    experience: {
-      type: String,
-      default: '',
-    },
-    description: {
-      type: String,
-      default: '',
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 .card-wrap {

@@ -1,43 +1,40 @@
+<script setup lang="ts">
+import { defineProps } from 'vue'
+
+const props = defineProps<{
+  filePath: string
+  hasLeft: boolean
+  hasRight: boolean
+}>()
+
+const emit = defineEmits<{
+  close: [],
+  'go-left': [],
+  'go-right': [],
+}>()
+</script>
+
 <template>
   <transition name="fade">
     <div
       v-show="filePath"
       class="light-box flex flex-row justify-around items-center"
-      @click="$emit('close')"
+      @click="emit('close')"
     >
       <button
         class="arrow-button left-arrow"
-        :class="{ hasNext: hasLeft }"
-        @click.stop="$emit('go-left')"
+        :class="{ hasNext: props.hasLeft }"
+        @click.stop="emit('go-left')"
       />
-      <img class="image" :src="filePath" @click.stop />
+      <img class="image" :src="props.filePath" @click.stop />
       <button
         class="arrow-button right-arrow"
-        :class="{ hasNext: hasRight }"
-        @click.stop="$emit('go-right')"
+        :class="{ hasNext: props.hasRight }"
+        @click.stop="emit('go-right')"
       />
     </div>
   </transition>
 </template>
-
-<script>
-export default {
-  props: {
-    filePath: {
-      type: String,
-      default: '',
-    },
-    hasLeft: {
-      type: Boolean,
-      default: false,
-    },
-    hasRight: {
-      type: Boolean,
-      default: false,
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 .light-box {

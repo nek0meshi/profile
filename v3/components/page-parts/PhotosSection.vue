@@ -1,7 +1,43 @@
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+import LightBox from '../parts/LightBox.vue'
+
+const photos = [
+  'DSC03381.jpeg',
+  'DSC02526.jpeg',
+  'DSC01741.jpeg',
+  'DSC02253.jpeg',
+  'DSC01744.jpeg',
+  'DSC01992.jpeg',
+  'DSC02007.jpeg',
+  'DSC02177.jpeg',
+  'DSC02182.jpeg',
+  'DSC02264.jpeg',
+  'DSC00112.jpeg',
+  'DSC02261.jpeg',
+]
+
+const selectedIndex = ref<null | number>(null)
+
+const selectedPath = computed(() =>
+  selectedIndex.value !== null ? 'photos/' + photos[selectedIndex.value] : '',
+)
+
+const select = (index) => (selectedIndex.value = index)
+const clearSelection = () => (selectedIndex.value = null)
+const go = (val) => {
+  if (!hasPhoto(selectedIndex.value + val)) {
+    return
+  }
+
+  selectedIndex.value += val
+}
+const hasPhoto = (val: number): boolean => val >= 0 && val < photos.length
+</script>
+
 <template>
   <section id="photo">
     <div class="app-container">
-      <h2 id="photos" class="section-title">PHOTOS</h2>
       <ul class="flex flex-row flex-wrap justify-between">
         <li v-for="(photo, index) in photos" :key="photo" class="photo-card">
           <img :src="'photos/' + photo" @click="select(index)" />
@@ -18,62 +54,6 @@
     />
   </section>
 </template>
-
-<script>
-import LightBox from '../parts/LightBox.vue'
-
-export default {
-  components: {
-    LightBox,
-  },
-  data() {
-    return {
-      selectedIndex: null,
-    }
-  },
-  computed: {
-    photos() {
-      return [
-        'DSC03381.jpeg',
-        'DSC02526.jpeg',
-        'DSC01741.jpeg',
-        'DSC02253.jpeg',
-        'DSC01744.jpeg',
-        'DSC01992.jpeg',
-        'DSC02007.jpeg',
-        'DSC02177.jpeg',
-        'DSC02182.jpeg',
-        'DSC02264.jpeg',
-        'DSC00112.jpeg',
-        'DSC02261.jpeg',
-      ]
-    },
-    selectedPath() {
-      return this.selectedIndex !== null
-        ? 'photos/' + this.photos[this.selectedIndex]
-        : ''
-    },
-  },
-  methods: {
-    select(index) {
-      this.selectedIndex = index
-    },
-    clearSelection() {
-      this.selectedIndex = null
-    },
-    go(val) {
-      if (!this.hasPhoto(this.selectedIndex + val)) {
-        return
-      }
-
-      this.selectedIndex += val
-    },
-    hasPhoto(val) {
-      return val >= 0 && val < this.photos.length
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 .photo-card {

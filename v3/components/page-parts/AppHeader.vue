@@ -1,3 +1,59 @@
+<script setup lang="ts">
+import { computed, onMounted, ref } from 'vue'
+import NavModal from './NavModal.vue'
+
+const links = [
+  {
+    href: '#about',
+    label: 'ABOUT',
+  },
+  {
+    href: '#history',
+    label: 'HISTORY',
+  },
+  {
+    href: '#skills',
+    label: 'SKILLS',
+  },
+  {
+    href: '#links',
+    label: 'LINKS',
+  },
+  {
+    href: '#photos',
+    label: 'PHOTOS',
+  },
+]
+
+const showNavModal = ref(false)
+const isScrolled = ref(false)
+
+const headerClass = computed(() => ({
+  scrolled: isScrolled.value,
+}))
+const hamburgerWrapClass = computed(() => ({
+  'show-modal': showNavModal.value,
+}))
+
+const clickHamburger = () => (showNavModal.value = !showNavModal.value)
+const scrollLink = (href) => {
+  // https://www.fenet.jp/dotnet/column/language/javascript/7491#JavaScript
+  const target = document.querySelector(href)
+  const top = target.offsetTop - 80
+  window.scrollTo({
+    top,
+    behavior: 'smooth',
+  })
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('.hero-image')
+    isScrolled.value = window.scrollY > header.clientHeight - 50
+  })
+})
+</script>
+
 <template>
   <header class="header fixed w-full" :class="headerClass">
     <div class="header-wrap mx-auto text-white relative">
@@ -29,82 +85,6 @@
     />
   </header>
 </template>
-
-<script>
-import NavModal from './NavModal.vue'
-
-export default {
-  components: {
-    NavModal,
-  },
-
-  data() {
-    return {
-      showNavModal: false,
-      isScrolled: false,
-    }
-  },
-
-  computed: {
-    links() {
-      return [
-        {
-          href: '#about',
-          label: 'ABOUT',
-        },
-        {
-          href: '#history',
-          label: 'HISTORY',
-        },
-        {
-          href: '#skills',
-          label: 'SKILLS',
-        },
-        {
-          href: '#links',
-          label: 'LINKS',
-        },
-        {
-          href: '#photos',
-          label: 'PHOTOS',
-        },
-      ]
-    },
-    headerClass() {
-      return {
-        scrolled: this.isScrolled,
-      }
-    },
-    hamburgerWrapClass() {
-      return {
-        'show-modal': this.showNavModal,
-      }
-    },
-  },
-
-  mounted() {
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('.hero-image')
-      this.isScrolled = window.scrollY > header.clientHeight - 50
-    })
-  },
-
-  methods: {
-    clickHamburger() {
-      this.showNavModal = !this.showNavModal
-    },
-    scrollLink(href) {
-      // https://www.fenet.jp/dotnet/column/language/javascript/7491#JavaScript
-      const target = document.querySelector(href)
-      const top = target.offsetTop - 80
-      window.scrollTo({
-        top,
-        behavior: 'smooth',
-      })
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 .header {

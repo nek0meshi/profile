@@ -1,39 +1,37 @@
+<script setup lang="ts">
+import { computed, defineProps } from 'vue'
+
+const props = defineProps<{
+  links: {
+    label: string
+    href: string
+  }[]
+  show: boolean
+}>()
+
+const emit = defineEmits<{
+  close: [],
+  jump: [href: string]
+}>()
+
+const navClass = computed(() => ({
+  show: props.show,
+}))
+</script>
+
 <template>
   <div
     class="nav-modal flex justify-center items-center"
     :class="navClass"
-    @click="$emit('close')"
+    @click="emit('close')"
   >
     <ul class="ul flex flex-col justify-between">
-      <li v-for="link in links" :key="link.label">
-        <a @click="$emit('jump', link.href)">{{ link.label }}</a>
+      <li v-for="link in props.links" :key="link.label">
+        <a @click="emit('jump', link.href)">{{ link.label }}</a>
       </li>
     </ul>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    links: {
-      type: Array,
-      default: () => [],
-    },
-    show: {
-      type: Boolean,
-      default: false,
-    },
-  },
-
-  computed: {
-    navClass() {
-      return {
-        show: this.show,
-      }
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 .nav-modal {

@@ -8,9 +8,9 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  close: [],
-  'go-left': [],
-  'go-right': [],
+  close: []
+  'go-left': []
+  'go-right': []
 }>()
 </script>
 

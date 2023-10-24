@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, ComputedRef } from 'vue'
+import ClassBinding from '~/src/common'
 import NavModal from './NavModal.vue'
 
 const links = [
@@ -28,14 +29,15 @@ const links = [
 const showNavModal = ref(false)
 const isScrolled = ref(false)
 
-const headerClass = computed(() => ({
+const headerClass: ComputedRef<ClassBinding> = computed(() => ({
   scrolled: isScrolled.value,
 }))
-const hamburgerWrapClass = computed(() => ({
+const hamburgerWrapClass: ComputedRef<ClassBinding> = computed(() => ({
   'show-modal': showNavModal.value,
 }))
 
 const clickHamburger = () => (showNavModal.value = !showNavModal.value)
+
 const scrollLink = (href) => {
   // https://www.fenet.jp/dotnet/column/language/javascript/7491#JavaScript
   const target = document.querySelector(href)

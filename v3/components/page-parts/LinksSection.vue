@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppContainer from '~/components/parts/AppContainer.vue'
 import LinkCard from './LinkCard.vue'
 
 const links = [
@@ -61,29 +62,23 @@ const links = [
 </script>
 
 <template>
-  <section>
-    <div class="app-container">
-      <h2 id="links" class="section-title">LINKS</h2>
-      <ul class="flex flex-row flex-wrap justify-between">
-        <LinkCard
-          v-for="link in links"
-          :key="link.title"
-          :title="link.title"
-          :url="link.url"
-          :description="link.description"
-          :tech-stacks="link.techStacks"
-          :file-name="link.fileName"
-          class="link-card"
-        />
-      </ul>
-    </div>
-  </section>
+  <app-container id="links" title="LINKS" is-gray>
+    <ul class="flex flex-row flex-wrap justify-between">
+      <LinkCard
+        v-for="link in links"
+        :key="link.title"
+        :title="link.title"
+        :url="link.url"
+        :description="link.description"
+        :tech-stacks="link.techStacks"
+        :file-name="link.fileName"
+        class="link-card"
+      />
+    </ul>
+  </app-container>
 </template>
 
 <style lang="scss" scoped>
-section {
-  background-color: $bg-1;
-}
 .link-card {
   width: calc(50% - 15px);
   margin-bottom: 50px;

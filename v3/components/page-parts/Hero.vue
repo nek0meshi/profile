@@ -10,7 +10,7 @@
 .hero-image {
   width: 100%;
   height: 100vh;
-  background-image: url('./static/hero.jpg');
+  background-image: url('./hero.jpg');
   h1 {
     color: #fff;
     font-size: 72px;

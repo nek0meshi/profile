@@ -8,11 +8,16 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "eslint:fix": "eslint --fix '**/*.{js,ts,vue}'",
     "prettier:fix": "prettier -w ."
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.8.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-vue": "^9.18.0",
     "nuxt": "^3.7.4",
     "prettier": "^3.0.3",
     "sass": "^1.69.4",

@@ -3,12 +3,19 @@
     <div class="app-container">
       <h2 id="photos" class="section-title">PHOTOS</h2>
       <ul class="flex flex-row flex-wrap justify-between">
-        <li v-for="photo in photos" :key="photo" class="photo-card">
-          <img :src="'photos/' + photo" @click="select(photo)" />
+        <li v-for="(photo, index) in photos" :key="photo" class="photo-card">
+          <img :src="'photos/' + photo" @click="select(index)" />
         </li>
       </ul>
     </div>
-    <LightBox :file-path="selectedPath" @close="clearSelection" />
+    <LightBox
+      :file-path="selectedPath"
+      :has-left="hasPhoto(selectedIndex !== null && selectedIndex - 1)"
+      :has-right="hasPhoto(selectedIndex !== null && selectedIndex + 1)"
+      @close="clearSelection"
+      @go-left="go(-1)"
+      @go-right="go(1)"
+    />
   </section>
 </template>
 
@@ -21,7 +28,7 @@ export default {
   },
   data() {
     return {
-      selected: null,
+      selectedIndex: null,
     }
   },
   computed: {
@@ -40,15 +47,27 @@ export default {
       ]
     },
     selectedPath() {
-      return this.selected ? 'photos/' + this.selected : ''
+      return this.selectedIndex !== null
+        ? 'photos/' + this.photos[this.selectedIndex]
+        : ''
     },
   },
   methods: {
-    select(target) {
-      this.selected = target
+    select(index) {
+      this.selectedIndex = index
     },
     clearSelection() {
-      this.selected = null
+      this.selectedIndex = null
+    },
+    go(val) {
+      if (!this.hasPhoto(this.selectedIndex + val)) {
+        return
+      }
+
+      this.selectedIndex += val
+    },
+    hasPhoto(val) {
+      return val >= 0 && val < this.photos.length
     },
   },
 }

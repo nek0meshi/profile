@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "eslint:fix": "eslint --fix '**/*.{js,ts,vue}'",
-    "prettier:fix": "prettier -w ."
+    "prettier:fix": "prettier -w .",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",

@@ -3,6 +3,10 @@ name: Node.js CI
 on:
   pull_request:
     branches: [ master ]
+  push:
+    paths:
+      - '.github/workflows/v2-ci.yml'
+      - 'v2'
 
 jobs:
   lint:

@@ -1,0 +1,26 @@
+name: Node.js CI
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    paths:
+      - '.github/workflows/v3-ci.yml'
+      - 'v3'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'v3'
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: 'v3/.tool-versions'
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+    - run: npm ci
+    - run: npm run lint

@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "generate:gh-pages": "BASE_PATH=profile nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "eslint": "eslint '**/*.{js,ts,vue}'",

@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "generate:gh-pages": "NUXT_APP_BASE_URL=/profile/ nuxt generate && touch .output/public/.nojekyll && mv .output/public ../docs",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "eslint": "eslint '**/*.{js,ts,vue}'",

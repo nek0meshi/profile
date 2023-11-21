@@ -8,8 +8,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "eslint": "eslint '**/*.{js,ts,vue}'",
     "eslint:fix": "eslint --fix '**/*.{js,ts,vue}'",
+    "prettier": "prettier -c .",
     "prettier:fix": "prettier -w .",
+    "lint": "npm run eslint && npm run prettier",
     "lint:fix": "npm run eslint:fix && npm run prettier:fix"
   },
   "devDependencies": {

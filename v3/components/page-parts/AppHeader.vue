@@ -2,13 +2,7 @@
   <header class="header fixed w-full" :class="headerClass">
     <div class="header-wrap mx-auto text-white relative">
       <ul
-        class="
-          flex flex-row
-          gap-4
-          justify-end
-          items-center
-          header-content header-links
-        "
+        class="flex flex-row gap-4 justify-end items-center header-content header-links"
       >
         <li v-for="link in links" :key="link.label">
           <a class="header-link-a text-white" @click="scrollLink(link.href)">{{
@@ -17,13 +11,7 @@
         </li>
       </ul>
       <nav
-        class="
-          flex flex-row
-          justify-end
-          items-center
-          header-content
-          hamburger-wrap
-        "
+        class="flex flex-row justify-end items-center header-content hamburger-wrap"
         :class="hamburgerWrapClass"
       >
         <a class="hamburger" @click="clickHamburger">

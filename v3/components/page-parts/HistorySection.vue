@@ -11,12 +11,14 @@ const histories = [
       'リードエンジニアとして、重要度の高い実装や上流寄りの工程、教育やレビューを担当。' +
       '1on1の開始、振り返り会の企画・進行などといったチーム運営にも取り組んでいる。',
     techStacks: [
-      'Laravel',
-      'Vue.js',
+      'PHP',
+      'TypeScript',
+      'React',
       'CakePHP2',
       'jQuery',
-      'TypeScript',
       'SCSS',
+      'Laravel',
+      'Vue.js',
     ],
   },
   {

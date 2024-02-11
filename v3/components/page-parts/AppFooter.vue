@@ -32,7 +32,7 @@ const links = [
         </a>
       </li>
     </ul>
-    <p>©︎ 2021-2023 YUSHI WATANABE</p>
+    <p>©︎ 2021-2024 YUSHI WATANABE</p>
   </footer>
 </template>
 

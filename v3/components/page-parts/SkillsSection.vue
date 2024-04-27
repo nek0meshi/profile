@@ -94,7 +94,7 @@ onMounted(() => {
     </ul>
     <div class="skill-others-card skill-card-fade-in">
       <h3 class="h3 mb-2">その他</h3>
-      <p class="experience mb-1">短期間の実務経験や実務外での利用</p>
+      <p class="experience mb-1">短期間の実務経験や実務外での利用を含む</p>
       <p>{{ skillOthers.join(', ') }}</p>
     </div>
   </app-container>

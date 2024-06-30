@@ -24,14 +24,16 @@ const selectedPath = computed(() =>
   selectedIndex.value !== null ? 'photos/' + photos[selectedIndex.value] : '',
 )
 
-const select = (index) => (selectedIndex.value = index)
+const select = (index: number) => (selectedIndex.value = index)
 const clearSelection = () => (selectedIndex.value = null)
-const go = (val) => {
-  if (!hasPhoto(selectedIndex.value + val)) {
+const go = (val: number) => {
+  const newVal = (selectedIndex.value ?? 0) + val
+
+  if (!hasPhoto(newVal)) {
     return
   }
 
-  selectedIndex.value += val
+  selectedIndex.value = newVal
 }
 const hasPhoto = (val: number): boolean => val >= 0 && val < photos.length
 </script>

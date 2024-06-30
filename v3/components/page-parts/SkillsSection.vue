@@ -6,15 +6,15 @@ import SkillCard from './SkillCard'
 const skills = [
   {
     title: 'PHP',
-    experience: '実務5年',
+    experience: '実務6年',
     description:
       'サーバサイドではPHPを使う機会が多い。Laravelを中心に、CakePHP2も経験がある。',
   },
   {
     title: 'JavaScript',
-    experience: '実務4年',
+    experience: '実務5年',
     description:
-      'Vue.js・jQueryを使うケースが多い。既存システムへのwebpackやTypeScriptの導入も担当。',
+      '既存システムへの部分的なTypeScript・React導入を担当。Vue.js・jQueryを過去に利用。',
   },
   {
     title: 'iOS/swift',
@@ -23,8 +23,9 @@ const skills = [
   },
   {
     title: 'HTML/CSS',
-    experience: '実務半年/実務外半年',
-    description: '実務で使うケースは少なく、本ページは学習も兼ねて作成した。',
+    experience: '実務1年',
+    description:
+      'SCSS・CSS Modulesも実務で利用。本ページは学習も兼ねて作成した。',
   },
   {
     title: 'Python',
@@ -47,16 +48,16 @@ const skillOthers = [
   'C#',
   'Objective-C',
   'Go',
-  'TypeScript',
-  'React',
   'AngularJS',
   'Nuxt.js',
   'Next.js',
-  'SCSS',
+  'Styled Components',
   'AWS',
   'Line Messaging API',
   'Docker',
   'Vagrant',
+  'GitHub',
+  'GitLab',
 ]
 
 onMounted(() => {
@@ -93,7 +94,7 @@ onMounted(() => {
     </ul>
     <div class="skill-others-card skill-card-fade-in">
       <h3 class="h3 mb-2">その他</h3>
-      <p class="experience mb-1">短期間の実務経験や実務外での利用</p>
+      <p class="experience mb-1">短期間の実務経験や実務外での利用を含む</p>
       <p>{{ skillOthers.join(', ') }}</p>
     </div>
   </app-container>

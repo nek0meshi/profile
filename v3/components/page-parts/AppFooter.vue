@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const links = [
+const links: {
+  title: string
+  url: string
+  imageFileName: string
+  bdColor?: string
+}[] = [
   {
     title: 'github',
     url: 'https://github.com/nek0meshi',

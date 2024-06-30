@@ -1,60 +1,49 @@
+<script setup lang="ts">
+import { defineProps, onMounted } from 'vue'
+const props = defineProps<{
+  title: string
+  period: string
+  description: string
+  techStacks: string[]
+}>()
+
+onMounted(() => {
+  // 要素の位置までスクロールしたらフェードインする.
+  // ref. https://cony-tas.com/javascript-scroll-event01
+  const element = document.querySelectorAll('.history-card-fade-in')
+  const windowH = window.innerHeight
+
+  window.addEventListener('scroll', () => {
+    // 係数
+    const k = 1.1
+
+    for (const e of element) {
+      if (windowH > e.getBoundingClientRect().top * k) {
+        e.classList.add('show')
+      } else {
+        e.classList.remove('show')
+      }
+    }
+  })
+})
+</script>
+
 <template>
   <li class="flex flex-row items-stretch history-card-wrap">
     <div class="timeline-date">
       <span class="timeline-icon"></span>
-      <span class="timeline-period history-card-fade-in">{{ period }}</span>
+      <span class="timeline-period history-card-fade-in">{{
+        props.period
+      }}</span>
     </div>
     <div class="history-card-fade-in">
-      <h3 class="mt-7 title">{{ title }}</h3>
-      <div class="mb-3">{{ description }}</div>
+      <h3 class="mt-7 title">{{ props.title }}</h3>
+      <div class="mb-3">{{ props.description }}</div>
       <p class="tech-stack-title">使用技術</p>
-      <div>{{ techStacks.join(', ') }}</div>
+      <div>{{ props.techStacks.join(', ') }}</div>
     </div>
   </li>
 </template>
-
-<script>
-export default {
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    period: {
-      type: String,
-      default: '',
-    },
-    description: {
-      type: String,
-      default: '',
-    },
-    techStacks: {
-      type: Array,
-      default: () => [],
-    },
-  },
-
-  mounted() {
-    // 要素の位置までスクロールしたらフェードインする.
-    // ref. https://cony-tas.com/javascript-scroll-event01
-    const element = document.querySelectorAll('.history-card-fade-in')
-    const windowH = window.innerHeight
-
-    window.addEventListener('scroll', () => {
-      // 係数
-      const k = 1.1
-
-      for (const e of element) {
-        if (windowH > e.getBoundingClientRect().top * k) {
-          e.classList.add('show')
-        } else {
-          e.classList.remove('show')
-        }
-      }
-    })
-  },
-}
-</script>
 
 <style scoped lang="scss">
 * {

@@ -34,10 +34,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-section {
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-</style>

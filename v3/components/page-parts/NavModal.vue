@@ -10,7 +10,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  close: [],
+  close: []
   jump: [href: string]
 }>()
 

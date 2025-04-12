@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss'],
   css: ['@/assets/scss/main.scss'],
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -14,7 +15,10 @@ export default defineNuxtConfig({
       },
     },
   },
+
   typescript: {
     shim: false,
   },
+
+  compatibilityDate: '2025-04-12',
 })

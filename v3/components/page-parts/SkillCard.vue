@@ -16,15 +16,16 @@ const props = defineProps<{
   </li>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .card-wrap {
   margin-bottom: 20px;
   padding: 15px 20px;
-  border: solid 1px $gray-3;
+  border: solid 1px var(--gray-3);
   border-radius: 10px;
-  .experience {
-    font-size: 14px;
-    font-weight: bold;
-  }
+}
+
+.card-wrap .experience {
+  font-size: 14px;
+  font-weight: bold;
 }
 </style>

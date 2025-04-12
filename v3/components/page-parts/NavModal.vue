@@ -33,7 +33,7 @@ const navClass = computed(() => ({
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .nav-modal {
   position: fixed;
   height: 100%;
@@ -43,20 +43,23 @@ const navClass = computed(() => ({
   transition: all 0.5s;
   opacity: 0;
   pointer-events: none;
-
-  &.show {
-    opacity: 1;
-    pointer-events: auto;
-    transition: all 0.5s;
-  }
-  * {
-    font-size: 30px;
-  }
-  a {
-    cursor: pointer;
-    text-decoration: none;
-  }
 }
+
+.nav-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.5s;
+}
+
+.nav-modal * {
+  font-size: 30px;
+}
+
+.nav-modal a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .ul {
   height: 40%;
 }

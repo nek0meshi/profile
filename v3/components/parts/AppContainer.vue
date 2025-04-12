@@ -26,39 +26,48 @@ const classObj: ComputedRef<ClassBinding> = computed(() => [
   </section>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .app-container {
   padding-top: 70px;
   padding-bottom: 70px;
 
   &.is-gray {
-    background-color: $bg-1;
+    background-color: var(--bg-1);
   }
 
-  .app-container-inner {
-    width: $tablet-max-width;
+  & .app-container-inner {
+    width: var(--tablet-max-width);
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-    @media (max-width: $tablet-max-width) {
-      width: $mobile-max-width;
-    }
-    @media (max-width: $mobile-max-width) {
-      width: 100%;
-    }
-
-    .section-title {
-      font-size: 40px;
-      margin-bottom: 30px;
-      @media (max-width: $mobile-max-width) {
-        font-size: 32px;
-      }
-    }
-
-    .h2 {
-      font-size: 40px;
-    }
   }
+}
+
+@media (max-width: 1024px) {
+  .app-container .app-container-inner {
+    width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container .app-container-inner {
+    width: 100%;
+  }
+}
+
+.app-container .app-container-inner .section-title {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .app-container .app-container-inner .section-title {
+    font-size: 32px;
+  }
+}
+
+.app-container .app-container-inner .h2 {
+  font-size: 40px;
 }
 </style>

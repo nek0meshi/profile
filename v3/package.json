@@ -26,7 +26,6 @@
     "eslint-plugin-vue": "^9.18.0",
     "nuxt": "^3.7.4",
     "prettier": "^3.0.3",
-    "sass": "^1.75.0",
     "vue": "^3.4.25",
     "vue-router": "^4.3.2"
   }

@@ -4,8 +4,14 @@ import HistoryCard from './HistoryCard'
 
 const histories = [
   {
+    title: 'フリーランス',
+    period: '2024/09〜現在',
+    description: 'フリーランスWebエンジニアとして活動している。',
+    techStacks: ['Laravel', 'React', 'TypeScript', 'GraphQL'],
+  },
+  {
     title: '株式会社スマレジ',
-    period: '2020/04〜現在',
+    period: '2020/04〜2024/08',
     description:
       'Webエンジニアとして、勤怠管理の自社サービスの開発に携わっている。' +
       'リードエンジニアとして、重要度の高い実装や上流寄りの工程、チームイベントの企画・主催等を担当。' +

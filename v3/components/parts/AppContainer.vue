@@ -1,16 +1,13 @@
 <script setup lang="ts">
-import { computed, ComputedRef, defineProps, withDefaults } from 'vue'
+import { computed, ComputedRef, defineProps } from 'vue'
 import ClassBinding from '~/src/common'
-const { id, title, isGray } = withDefaults(
-  defineProps<{
-    id: string
-    title: string
-    isGray?: boolean
-  }>(),
-  {
-    isGray: false,
-  },
-)
+const props = defineProps<{
+  id: string
+  title: string
+  isGray?: boolean
+}>()
+
+const { id, title, isGray = false } = props
 
 const classObj: ComputedRef<ClassBinding> = computed(() => [
   {

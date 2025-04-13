@@ -78,12 +78,14 @@ const links = [
   </app-container>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .link-card {
   width: calc(50% - 15px);
   margin-bottom: 50px;
+}
 
-  @media (max-width: $tablet-max-width) {
+@media (max-width: 1024px) {
+  .link-card {
     width: 100%;
   }
 }

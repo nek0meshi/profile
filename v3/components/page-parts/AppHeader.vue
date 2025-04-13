@@ -96,77 +96,82 @@ onMounted(() => {
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .header {
   z-index: 8000;
-  .header-wrap {
-    & > * {
-      transition: 1s;
-    }
-  }
-  &.scrolled {
-    .header-wrap {
-      & > * {
-        background-color: $main-1;
-      }
-    }
-  }
 }
+
+.header .header-wrap > * {
+  transition: 1s;
+}
+
+.header.scrolled .header-wrap > * {
+  background-color: var(--main-1);
+}
+
 .header-content {
   position: absolute;
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
   height: 56px;
-
-  a {
-    cursor: pointer;
-  }
 }
+
+.header-content a {
+  cursor: pointer;
+}
+
 .header-links {
-  @media (max-width: $mobile-max-width) {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .header-links {
     display: none;
   }
 }
+
 .header-link-a {
   display: block;
   position: relative;
   text-decoration: none;
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0;
-    border-bottom: solid 2px $white;
-    transition: 0.5s;
-  }
-
-  &:hover {
-    &::after {
-      transition: 0.5s;
-      width: 100%;
-    }
-  }
 }
+
+.header-link-a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  border-bottom: solid 2px var(--white);
+  transition: 0.5s;
+}
+
+.header-link-a:hover::after {
+  transition: 0.5s;
+  width: 100%;
+}
+
 .hamburger-bar {
   position: absolute;
   width: 30px;
   height: 2px;
   background-color: #eee;
   transition: 0.5s;
-
-  &:nth-child(1) {
-    top: calc(50% - 10px);
-  }
-  &:nth-child(2) {
-    top: 50%;
-  }
-  &:nth-child(3) {
-    top: calc(50% + 10px);
-  }
 }
+
+.hamburger-bar:nth-child(1) {
+  top: calc(50% - 10px);
+}
+
+.hamburger-bar:nth-child(2) {
+  top: 50%;
+}
+
+.hamburger-bar:nth-child(3) {
+  top: calc(50% + 10px);
+}
+
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -176,28 +181,33 @@ onMounted(() => {
   width: 24px;
   z-index: 10000;
 }
+
 .hamburger-wrap {
   display: none;
-  @media (max-width: $mobile-max-width) {
+}
+
+@media (max-width: 768px) {
+  .hamburger-wrap {
     display: flex;
   }
+}
 
-  &.show-modal {
-    .hamburger-bar {
-      background-color: #000;
-      transform: rotateZ(45deg);
-      transition: 0.5s;
-      &:nth-child(1) {
-        top: 50%;
-      }
-      &:nth-child(2) {
-        top: 50%;
-      }
-      &:nth-child(3) {
-        top: 50%;
-        transform: rotateZ(-45deg);
-      }
-    }
-  }
+.hamburger-wrap.show-modal .hamburger-bar {
+  background-color: #000;
+  transform: rotateZ(45deg);
+  transition: 0.5s;
+}
+
+.hamburger-wrap.show-modal .hamburger-bar:nth-child(1) {
+  top: 50%;
+}
+
+.hamburger-wrap.show-modal .hamburger-bar:nth-child(2) {
+  top: 50%;
+}
+
+.hamburger-wrap.show-modal .hamburger-bar:nth-child(3) {
+  top: 50%;
+  transform: rotateZ(-45deg);
 }
 </style>

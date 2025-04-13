@@ -6,18 +6,21 @@
   </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .hero-image {
   width: 100%;
   height: 100vh;
   background-image: url('/hero.jpg');
+}
 
-  h1 {
-    color: #fff;
-    font-size: 72px;
-    @media (max-width: $mobile-max-width) {
-      font-size: 50px;
-    }
+.hero-image h1 {
+  color: #fff;
+  font-size: 72px;
+}
+
+@media (max-width: 768px) {
+  .hero-image h1 {
+    font-size: 50px;
   }
 }
 </style>

@@ -45,10 +45,11 @@ onMounted(() => {
   </li>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 * {
   text-align: left;
 }
+
 @keyframes fadein-top {
   0% {
     opacity: 0;
@@ -59,18 +60,22 @@ onMounted(() => {
     transform: translateY(0);
   }
 }
+
 h3 {
   font-size: 24px;
 }
+
 .tech-stack-title {
   font-weight: bold;
 }
+
 .timeline-date {
   position: relative;
   width: 1px;
   margin: 0 30px -30px 5px;
-  background-color: $gray-3;
+  background-color: var(--gray-3);
 }
+
 .timeline-icon {
   position: absolute;
   top: 5px;
@@ -78,34 +83,39 @@ h3 {
   width: 11px;
   height: 11px;
   border-radius: 100%;
-  background-color: $main-3;
+  background-color: var(--main-3);
 }
+
 .title {
   margin-bottom: 8px;
 }
+
 .timeline-period {
   position: absolute;
   top: 2px;
   left: 20px;
   width: 200px;
   font-size: 12px;
-  color: $main-2;
+  color: var(--main-2);
 }
+
 .history-card-wrap {
   margin-bottom: 30px;
+}
 
-  &:last-child {
-    margin-bottom: 0;
-    .timeline-date {
-      margin-bottom: 0;
-    }
-  }
+.history-card-wrap:last-child {
+  margin-bottom: 0;
+}
 
-  .history-card-fade-in {
-    opacity: 0;
-    &.show {
-      animation: fadein-top 1s 0.1s ease-in forwards;
-    }
-  }
+.history-card-wrap:last-child .timeline-date {
+  margin-bottom: 0;
+}
+
+.history-card-wrap .history-card-fade-in {
+  opacity: 0;
+}
+
+.history-card-wrap .history-card-fade-in.show {
+  animation: fadein-top 1s 0.1s ease-in forwards;
 }
 </style>

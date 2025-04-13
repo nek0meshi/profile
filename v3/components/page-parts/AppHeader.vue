@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, ComputedRef } from 'vue'
-import ClassBinding from '~/src/common'
+import ClassBinding from '../../src/common'
 import NavModal from './NavModal.vue'
 
 const links = [
@@ -38,10 +38,11 @@ const hamburgerWrapClass: ComputedRef<ClassBinding> = computed(() => ({
 
 const clickHamburger = () => (showNavModal.value = !showNavModal.value)
 
-const scrollLink = (href) => {
+const scrollLink = (href: string) => {
   // https://www.fenet.jp/dotnet/column/language/javascript/7491#JavaScript
-  const target = document.querySelector(href)
-  const top = target.offsetTop - 80
+  const target = document.querySelector<HTMLElement>(href)
+
+  const top: string = target.offsetTop - 80
   window.scrollTo({
     top,
     behavior: 'smooth',
@@ -51,6 +52,13 @@ const scrollLink = (href) => {
 onMounted(() => {
   window.addEventListener('scroll', () => {
     const header = document.querySelector('.hero-image')
+
+    if (!header) {
+      console.error('header is null')
+
+      return
+    }
+
     isScrolled.value = window.scrollY > header.clientHeight - 50
   })
 })

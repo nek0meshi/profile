@@ -41,7 +41,7 @@ const links: {
   </footer>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 * {
   color: #fff;
 }
@@ -54,7 +54,7 @@ footer {
   gap: 20px;
   height: 180px;
   width: 100%;
-  background-color: $main-1;
+  background-color: var(--main-1);
 }
 
 .logos {
@@ -67,9 +67,10 @@ footer {
   width: 50px;
   border-radius: 100%;
   transition: 0.5s;
-  &:hover {
-    transition: 0.5s;
-    transform: translateY(-5px);
-  }
+}
+
+.link-logo:hover {
+  transition: 0.5s;
+  transform: translateY(-5px);
 }
 </style>

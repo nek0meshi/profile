@@ -103,7 +103,7 @@ onMounted(() => {
   </app-container>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 @keyframes fadein {
   0% {
     opacity: 0;
@@ -112,29 +112,39 @@ onMounted(() => {
     opacity: 1;
   }
 }
+
 .skill-card {
   width: calc(33% - 10px);
+}
 
-  @media (max-width: $tablet-max-width) {
+@media (max-width: 1024px) {
+  .skill-card {
     width: calc(50% - 15px);
   }
-  @media (max-width: $mobile-max-width) {
+}
+
+@media (max-width: 768px) {
+  .skill-card {
     width: 100%;
   }
 }
+
 .skill-others-card {
   padding: 10px 20px;
-  border: solid 1px $gray-3;
+  border: solid 1px var(--gray-3);
   border-radius: 10px;
-  .experience {
-    font-size: 14px;
-    font-weight: bold;
-  }
 }
+
+.skill-others-card .experience {
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .skill-card-fade-in {
   opacity: 0;
-  &.show {
-    animation: fadein 0.5s 0.1s ease-in forwards;
-  }
+}
+
+.skill-card-fade-in.show {
+  animation: fadein 0.5s 0.1s ease-in forwards;
 }
 </style>

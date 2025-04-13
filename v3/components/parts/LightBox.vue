@@ -36,7 +36,7 @@ const emit = defineEmits<{
   </transition>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .light-box {
   position: fixed;
   width: 100%;
@@ -51,43 +51,47 @@ const emit = defineEmits<{
   max-width: calc(100% - 150px);
   max-height: 90%;
   object-fit: contain;
+}
 
-  @media (max-width: $mobile-max-width) {
+@media (max-width: 768px) {
+  .image {
     max-width: 100%;
   }
 }
-$arrow-color: #aaa;
-$arrow-size: 15px;
-$arrow-btn-size: 50px;
+
 .arrow-button {
   position: relative;
   background-color: #333;
-  width: $arrow-btn-size;
-  height: $arrow-btn-size;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   opacity: 0;
 
   &::after {
     content: '';
     position: absolute;
-    top: calc($arrow-btn-size / 2 - $arrow-size);
-    border-top: $arrow-size solid transparent;
-    border-bottom: $arrow-size solid transparent;
+    top: calc(50px / 2 - 15px);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
   }
+
   &.left-arrow::after {
-    border-right: $arrow-size solid $arrow-color;
-    left: calc($arrow-btn-size / 2 - $arrow-size * 2 / 3);
+    border-right: 15px solid #aaa;
+    left: calc(50px / 2 - 15px * 2 / 3);
   }
+
   &.right-arrow::after {
-    border-left: $arrow-size solid $arrow-color;
-    right: calc($arrow-btn-size / 2 - $arrow-size * 2 / 3);
+    border-left: 15px solid #aaa;
+    right: calc(50px / 2 - 15px * 2 / 3);
   }
 
   &.hasNext {
     opacity: 0.5;
   }
+}
 
-  @media (max-width: $mobile-max-width) {
+@media (max-width: 768px) {
+  .arrow-button {
     position: fixed;
     top: 0;
     width: 100px;
@@ -111,6 +115,7 @@ $arrow-btn-size: 50px;
     }
   }
 }
+
 .fade-enter-active {
   transition: all 0.5s ease;
 }

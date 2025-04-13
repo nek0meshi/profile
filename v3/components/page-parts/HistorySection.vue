@@ -72,7 +72,7 @@ const histories = [
   </app-container>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 /**
  * style tagを削除するとscript tagがstyle tagと誤認されてsassエラーが発生する.
  */

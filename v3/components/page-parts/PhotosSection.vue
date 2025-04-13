@@ -56,22 +56,26 @@ const hasPhoto = (val: number): boolean => val >= 0 && val < photos.length
   </app-container>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .photo-card {
   width: calc(33% - 5px);
   margin-bottom: 30px;
   cursor: pointer;
   transition: 0.2s;
+}
 
-  &:hover {
-    filter: brightness(80%);
-  }
+.photo-card:hover {
+  filter: brightness(80%);
+}
 
-  @media (max-width: $tablet-max-width) {
+@media (max-width: 1024px) {
+  .photo-card {
     width: calc(50% - 5px);
   }
+}
 
-  @media (max-width: $mobile-max-width) {
+@media (max-width: 768px) {
+  .photo-card {
     width: 100%;
   }
 }
